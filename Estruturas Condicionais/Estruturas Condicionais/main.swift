@@ -80,7 +80,7 @@ func vouComprarCarro(carteiraMotorista: Bool, valor: Double) -> Bool {
     }
 }
 
-var comprarCarro: Bool = vouComprarCarro(carteiraMotorista: true, valor: 20000)
+//var comprarCarro: Bool = vouComprarCarro(carteiraMotorista: true, valor: 20000)
 //print(comprarCarro)
 
 
@@ -94,5 +94,70 @@ func descontoLoja(valorTotal: Double, cartaoFidelidade: Bool) -> Bool {
     }
 }
 
-var vouTerDesconto: Bool = descontoLoja(valorTotal: 5000, cartaoFidelidade: false)
-print(vouTerDesconto)
+//var vouTerDesconto: Bool = descontoLoja(valorTotal: 5000, cartaoFidelidade: false)
+//print(vouTerDesconto)
+
+print("=======================================================")
+
+//1-Crie uma função que receba dois parâmetros (nota1: Double, nota2: Double) e retorne "Aluno aprovado” se a media das notas for maior ou igual a 7. Caso contrário retorne "Aluno reprovado"
+
+func notaAluno(nota1: Double, nota2: Double) -> String {
+    let mediaAluno = (nota1 + nota2) / 2
+    if mediaAluno >= 7.0 {
+        return "ALUNO APROVADO"
+    } else {
+        return "ALUNO REPROVADO"
+    }
+}
+
+print(notaAluno(nota1: 4, nota2: 5.5))
+
+print("=======================================================")
+
+//2- Crie uma função "desconto" que receba um parâmetro (total: Double). Caso o total (parâmetro) seja menor que 100.0, dê 10% de desconto. Caso o valor esteja entre 100.0 e 200.0 dê 15% de desconto. Valores acima de 200.0 dê 20% de desconto. A função tem que ter um retorno do tipo Double que vai ser o total (parâmetro) com o desconto aplicado de acordo com as condições citadas.
+
+func descontoTotal(total: Double) -> Double {
+    if total < 100.0 {
+        return total * 0.9
+    } else if total <= 200.0 {
+        return total * 0.85
+    } else {
+        return total * 0.8
+    }
+}
+
+print(descontoTotal(total: 455.88))
+
+print("=======================================================")
+
+//3- Crie uma função semáforo que receba uma parâmetro do tipo string. Se o valor recebido no parâmetro for vermelho, retorne "PARE", se for amarelo, retorne "ATENÇÃO*, se for verde, retorne
+//"SIGA EM FRENTE, se não, retorne "PARÂMETRO INVÁLIDO" caso o valor recebido seja diferente dos já citados.
+
+func semaforo(cor: String) -> String {
+    if cor == "vermelho" {
+        return "PARE"
+    } else if cor == "amarelo" {
+        return "ATENÇÃO"
+    } else if cor == "verde" {
+        return "SIGA EM FRENTE"
+    } else {
+        return "PARÂMETRO INVÁLIDO"
+    }
+}
+
+print(semaforo(cor: "verde"))
+
+print("=======================================================")
+
+//4- Crie uma função que receba dois parâmetros (eFimDeSemana: Bool, tenhoDinheiro: Bool) e caso
+//seja final de semana e você tenha dinheiro, print "VAMOS PASSEAR", caso contrário, print "VAMOS FICAR EM CASA"
+
+func minhaVida(eFimDeSemana: Bool, tenhoDinheiro: Bool) {
+    if eFimDeSemana && tenhoDinheiro {
+        print("VAMOS PASSEAR")
+    } else {
+        print("VAMOS FICAR EM CASA")
+    }
+}
+
+print(minhaVida(eFimDeSemana: true, tenhoDinheiro: false))
