@@ -143,3 +143,72 @@ class Fogao {
         print("Meu fogão do tipo \(tipo) tem \(numeroBocas) bocas para cozinhar!")
     }
 }
+
+// Reference Type
+
+//var caio: Pessoa = Pessoa(nome: "Caio", idade: 21, peso: 80)
+//var felipe: Pessoa = Pessoa(nome: "Felipe", idade: 31, peso: 70)
+
+//caio = felipe
+
+//print(caio.nome)
+//print(caio.idade)
+
+//caio.idade = 40
+
+//print(caio.idade)
+//print(felipe.idade)
+
+// CLASSE PAI
+
+class Estadio {
+    var nome: String
+    var capacidade: Int
+    var localizacao: String
+    
+    init(nome: String, capacidade: Int, localizacao: String) {
+        self.nome = nome
+        self.capacidade = capacidade
+        self.localizacao = localizacao
+    }
+    
+    func descricao() {
+        print("Estádio \(nome), Capacidade: \(capacidade), Localização: \(localizacao)")
+    }
+    
+    func realizarEvento() {
+        print("Este evento será realizado no estádio \(nome)")
+    }
+}
+
+// CLASSE FILHA 1
+
+class EstadioFutebol: Estadio {
+    var timeCasa: String = "Palmeiras"
+    var gramaSintetica: Bool = true
+    var quantidadeTorcedores: Int = 45000
+    
+    func anuncioDoJogo() {
+        print("Hoje tem jogo do \(timeCasa) no estádio \(nome)!")
+    }
+}
+
+// CLASSE FILHA 2
+
+class EstadioShows: Estadio {
+    var artistaPrincipal: String
+    var generoMusical: String
+    var dataShow: String
+    
+    init(nome: String, capacidade: Int, localizacao: String, artistaPrincipal: String, generoMusical: String, dataShow: String) {
+        self.artistaPrincipal = artistaPrincipal
+        self.generoMusical = generoMusical
+        self.dataShow = dataShow
+        
+        super.init(nome: nome, capacidade: capacidade, localizacao: localizacao)
+    }
+    
+    func anunciarShows() {
+        print("Não perca o show de \(artistaPrincipal) no estádio \(nome) em \(dataShow)!")
+    }
+}
