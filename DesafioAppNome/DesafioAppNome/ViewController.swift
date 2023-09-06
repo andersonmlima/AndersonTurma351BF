@@ -29,11 +29,19 @@ class ViewController: UIViewController {
         var fullName = "\(firstName) \(lastName)"
         
         resultNameLable.text = fullName
+        
+        if !firstName.isEmpty && !lastName.isEmpty {
+            resultNameLable.text = fullName
+        } else {
+            resultNameLable.text = "Informe todos os campos"
+        }
     }
     
     func configName() {
         view.backgroundColor = .lightGray
         resultNameLable.textColor = .red
+        firstNameTextField.placeholder = "Digite seu nome"
+        lastNameTextField.placeholder = "Digite seu sobrenome"
         displayNameButton.backgroundColor = .blue
         displayNameButton.tintColor = .white
         displayNameButton.setTitle("Exibir Nomes", for: .normal)
