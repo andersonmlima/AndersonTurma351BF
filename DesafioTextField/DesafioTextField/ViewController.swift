@@ -23,6 +23,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func tappedRegisterButton(_ sender: UIButton) {
+        if nameTextField.text?.isEmpty == false && addressTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false{
+            print("Cadastro realizado!")
+        }
     }
     
     func config() {
